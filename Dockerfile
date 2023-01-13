@@ -1,4 +1,4 @@
-FROM docker.io/falcosecurity/falco-no-driver:0.33.1
+FROM docker.io/falcosecurity/falco-no-driver:master
 
 RUN apt-get -y update && apt-get -y install ca-certificates
 
