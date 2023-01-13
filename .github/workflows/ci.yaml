@@ -5,6 +5,7 @@ on:
     paths:
       - Dockerfile
       - libk8saudit-eks.so
+      - k8s_audit_rules.yaml
 
 env:
   REGISTRY: ghcr.io
