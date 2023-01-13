@@ -1,0 +1,34 @@
+image:
+  pullPolicy: IfNotPresent
+  registry: ghcr.io/trallnag
+  repository: falco-with-plugins
+  tag: master
+
+controller:
+  kind: deployment
+
+driver:
+  enabled: false
+
+collectors:
+  enabled: false
+
+auditLog:
+  enabled: true
+
+falco:
+  plugins:
+    - name: k8saudit-eks
+      library_path: libk8saudit-eks.so
+      init_config:
+        region: "us-east-1"
+        profile: "default"
+        shift: 10
+        polling_interval: 10
+        use_async: false
+        buffer_size: 500
+      open_params: "c360-dev"
+    - name: json
+      library_path: libjson.so
+      init_config: ""
+  load_plugins: [k8saudit-eks, json]

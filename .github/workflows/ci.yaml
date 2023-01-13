@@ -2,6 +2,9 @@ name: CI
 
 on:
   push:
+    paths:
+      - Dockerfile
+      - libk8saudit-eks.so
 
 env:
   REGISTRY: ghcr.io
