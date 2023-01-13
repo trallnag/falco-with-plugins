@@ -2,8 +2,6 @@ name: CI
 
 on:
   push:
-    tags:
-      - "*"
     paths:
       - Dockerfile
       - libk8saudit-eks.so
